@@ -64,7 +64,6 @@
       thisProduct.initOrderForm();
       thisProduct.processOrder();
 
-    //  console.log('new Product:', thisProduct);
     }
     renderInMenu() {
       const thisProduct = this;
@@ -83,20 +82,15 @@
 
       thisProduct.accordionTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
       thisProduct.form = thisProduct.element.querySelector(select.menuProduct.form);
-      console.log('form', thisProduct.form);
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
-      console.log('formInputs',thisProduct.formInputs);
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     }
 
     initAccordion() {
       const thisProduct = this;
 
-     // const clickers = thisProduct.element.querySelectorAll(select.menuProduct.clickable);
-     // console.log('clickers', clickers);
-
-     // for (let clicker of clickers) {
         thisProduct.accordionTrigger.addEventListener('click', function () {
         event.preventDefault();
         const element = thisProduct.element;
@@ -104,22 +98,18 @@
         element.classList.toggle(classNames.menuProduct.wrapperActive);
 
         const activeProducts = document.querySelectorAll(select.all.menuProductsActive);
-        //  console.log('activeProducts', activeProducts);
 
         for (let activeProduct of activeProducts) {
-        //  console.log('activeProduct', activeProduct);
           if (activeProduct != thisProduct.element) {
             activeProduct.classList.remove('active');
             
           }
         }
         });
-    //  }
     }
 
     initOrderForm() {
       const thisProduct = this;
-      console.log('initOrderForm', thisProduct);
 
       thisProduct.form.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -140,10 +130,8 @@
 
     processOrder() {
       const thisProduct = this;
-      console.log('processOrder', thisProduct);
 
       const formData = utils.serializeFormToObject(thisProduct.form);
-      console.log('formData', formData);
 
       let price = thisProduct.data.price;
 
@@ -160,19 +148,26 @@
           } else if (!optionSelected && option.default) {
             price -= param.options[optionId].price;
           }
+
+          const images = thisProduct.imageWrapper.querySelectorAll('.'+paramId+'-'+optionId);
+          if ((optionSelected && option.default)||(optionSelected && !option.default)) {
+            for (let image of images) {
+              image.classList.add(classNames.menuProduct.imageVisible);
+            }
+          } else {
+            for (let image of images) {
+              image.classList.remove(classNames.menuProduct.imageVisible);
+            }
+          }
         }
       }
       thisProduct.priceElem.innerHTML = price;
-      console.log('price', thisProduct.priceElem);
-     // thisProduct.element.querySelector(thisProduct.priceElem).innerHTML = thisProduct.priceElem;
     }
   }
 
   const app = {
     initMenu: function () {
       const thisApp = this;
-
-    //  console.log('thisApp.data:', thisApp.data);
 
       for (let productData in thisApp.data.products) {
         new Product(productData, thisApp.data.products[productData]);
