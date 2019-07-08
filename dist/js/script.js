@@ -370,7 +370,7 @@
       const thisCart = this;
 
       const index = thisCart.products.indexOf(cartProduct);
-      const remove =  thisCart.products.splice(index, 1);
+      thisCart.products.splice(index, 1);
 
       thisCart.update();
     }
