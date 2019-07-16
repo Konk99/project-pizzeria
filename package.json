@@ -36,6 +36,7 @@
         "browser-sync": "^2.26.3",
         "copyfiles": "^2.1.0",
         "eslint": "^6.0.1",
+        "flatpickr": "^4.6.2",
         "globstar": "^1.0.0",
         "http-server": "^0.11.1",
         "mkdirp": "^0.5.1",
