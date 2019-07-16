@@ -1,6 +1,6 @@
-import { templates, select } from "../settings";
-import { utils } from "../utils";
-import { AmountWidget } from "./AmountWidget";
+import { templates, select } from "../settings.js";
+import { utils } from "../utils.js";
+import { AmountWidget } from "./AmountWidget.js";
 
 export class Booking {
   constructor(booking) {
@@ -12,16 +12,14 @@ export class Booking {
 
   render(element) {
     const thisBooking = this;
-
     const generateHTML = templates.bookingWidget();
 
     thisBooking.dom = {};
     thisBooking.dom.wrapper = element;
 
     thisBooking.dom.wrapper.innerHTML = generateHTML;
-
-    thisBooking.dom.peopleAmount = element.querrySelector(select.booking.peopleAmount);
-    thisBooking.dom.hoursAmount = element.querrySelector(select.booking.hoursAmount);
+    thisBooking.dom.peopleAmount = thisBooking.dom.wrapper.querySelector(select.booking.peopleAmount);
+    thisBooking.dom.hoursAmount = thisBooking.dom.wrapper.querySelector(select.booking.hoursAmount);
   }
 
   initWidget() {
