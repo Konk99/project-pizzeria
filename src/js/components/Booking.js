@@ -122,13 +122,14 @@ export class Booking {
 
     thisBooking.booked[date][hour].push(table);
 
-    hour -= -(duration);
-
+    for (let i = 0; i < duration * 2; i++) {
+      hour = parseFloat(hour) + .5;
     if (!thisBooking.booked[date][hour]) {
-      thisBooking.booked[date][hour] = [];
-    }
+        thisBooking.booked[date][hour] = [];
+      }
 
     thisBooking.booked[date][hour].push(table);
+    }
   }
 
   updateDOM() {
