@@ -206,7 +206,7 @@
   "event": [
     {
       "id": 1,
-      "date": "2019-07-21",
+      "date": "2019-07-25",
       "hour": "12:30",
       "table": 1,
       "repeat": false,
@@ -222,7 +222,10 @@
       "repeat": "daily",
       "duration": 2,
       "ppl": 3,
-      "starters": [ "bread", "lemonWater" ]
+      "starters": [
+        "bread",
+        "lemonWater"
+      ]
     },
     {
       "id": 3,
@@ -232,7 +235,10 @@
       "repeat": "daily",
       "duration": 2,
       "ppl": 3,
-      "starters": [ "bread", "lemonWater" ]
+      "starters": [
+        "bread",
+        "lemonWater"
+      ]
     },
     {
       "id": 4,
@@ -252,8 +258,227 @@
       "repeat": "daily",
       "duration": 2,
       "ppl": 3,
-      "starters": [ "lemonWater" ]
+      "starters": [
+        "lemonWater"
+      ]
+    },
+    {
+      "hour": "17:00",
+      "date": "2019-07-26",
+      "people": 2,
+      "duration": 3,
+      "table": 3,
+      "repeat": false,
+      "id": 6
+    },
+    {
+      "hour": "14:30",
+      "date": "2019-07-26",
+      "people": 2,
+      "duration": 3,
+      "table": 2,
+      "repeat": false,
+      "id": 7
+    },
+    {
+      "hour": "15:00",
+      "date": "2019-07-30",
+      "people": 2,
+      "duration": 3,
+      "table": null,
+      "repeat": false,
+      "id": 8
+    },
+    {
+      "hour": "15:00",
+      "date": "2019-07-30",
+      "people": 2,
+      "duration": 3,
+      "table": 2,
+      "repeat": false,
+      "id": 9
     }
   ],
-  "booking": []
+  "booking": [
+    {
+      "hour": "14:00",
+      "date": "2019-07-26",
+      "people": 3,
+      "duration": 2,
+      "table": 2,
+      "repeat": false,
+      "id": 1
+    },
+    {
+      "hour": "16:00",
+      "date": "2019-07-26",
+      "people": 3,
+      "duration": 2,
+      "table": 2,
+      "repeat": false,
+      "id": 2
+    },
+    {
+      "hour": "14:00",
+      "date": "2019-07-26",
+      "people": 3,
+      "duration": 2,
+      "table": 2,
+      "repeat": false,
+      "id": 3
+    },
+    {
+      "hour": "15:30",
+      "date": "2019-07-28",
+      "people": 1,
+      "duration": 2,
+      "table": 3,
+      "repeat": false,
+      "id": 4
+    },
+    {
+      "hour": "15:30",
+      "date": "2019-07-28",
+      "people": 1,
+      "duration": 1,
+      "table": 3,
+      "repeat": false,
+      "id": 5
+    },
+    {
+      "hour": "15:30",
+      "date": "2019-07-28",
+      "people": 1,
+      "duration": 1,
+      "table": 3,
+      "repeat": false,
+      "id": 6
+    },
+    {
+      "hour": "15:30",
+      "date": "2019-07-28",
+      "people": 1,
+      "duration": 1,
+      "table": null,
+      "repeat": false,
+      "id": 7
+    },
+    {
+      "hour": "14:00",
+      "date": "2019-07-28",
+      "people": 1,
+      "duration": 1,
+      "table": null,
+      "repeat": false,
+      "id": 8
+    },
+    {
+      "hour": "14:00",
+      "date": "2019-07-28",
+      "people": 1,
+      "duration": 1,
+      "table": 3,
+      "repeat": false,
+      "id": 9
+    },
+    {
+      "hour": "14:00",
+      "date": "2019-07-28",
+      "people": 1,
+      "duration": 1,
+      "table": null,
+      "repeat": false,
+      "id": 10
+    },
+    {
+      "hour": "14:00",
+      "date": "2019-07-28",
+      "people": 1,
+      "duration": 1,
+      "table": null,
+      "repeat": false,
+      "id": 11
+    },
+    {
+      "hour": "14:00",
+      "date": "2019-07-28",
+      "people": 1,
+      "duration": 1,
+      "table": null,
+      "repeat": false,
+      "id": 12
+    },
+    {
+      "hour": "14:00",
+      "date": "2019-07-28",
+      "people": 1,
+      "duration": 1,
+      "table": null,
+      "repeat": false,
+      "id": 13
+    },
+    {
+      "hour": "14:00",
+      "date": "2019-07-28",
+      "people": 1,
+      "duration": 1,
+      "table": null,
+      "repeat": false,
+      "id": 14
+    },
+    {
+      "hour": "14:00",
+      "date": "2019-07-28",
+      "people": 1,
+      "duration": 1,
+      "table": null,
+      "repeat": false,
+      "id": 15
+    },
+    {
+      "hour": "12:00",
+      "date": "2019-07-26",
+      "people": 1,
+      "duration": 2,
+      "table": 2,
+      "repeat": false,
+      "id": 16
+    },
+    {
+      "hour": "14:00",
+      "date": "2019-07-28",
+      "people": 1,
+      "duration": 1,
+      "table": null,
+      "repeat": false,
+      "id": 17
+    },
+    {
+      "hour": "14:00",
+      "date": "2019-07-28",
+      "people": 1,
+      "duration": 1,
+      "table": null,
+      "repeat": false,
+      "id": 18
+    },
+    {
+      "hour": "14:00",
+      "date": "2019-07-28",
+      "people": 1,
+      "duration": 2,
+      "table": 2,
+      "repeat": false,
+      "id": 19
+    },
+    {
+      "hour": "14:00",
+      "date": "2019-07-28",
+      "people": 1,
+      "duration": 2,
+      "table": 3,
+      "repeat": false,
+      "id": 20
+    }
+  ]
 }
