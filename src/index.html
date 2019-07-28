@@ -21,6 +21,7 @@
           <h2 class="logo__subtitle">the best homemade Italian food</h2>
         </div>
         <div class="main-nav">
+          <a href="#main-menu">Menu</a>
           <a href="#order">Order</a>
           <a href="#booking">Booking</a>
         </div>
@@ -61,6 +62,9 @@
   </header>
 
   <div id="pages">
+    <section id="main-menu">
+      <div id="menu" class="menu container"></div>
+    </section>
     <section id="order">
       <div id="product-list" class="product-list container"></div>
     </section>
@@ -68,6 +72,164 @@
       <div class="booking-wrapper container"></div>
     </section>
   </div>
+
+  <script id="template-main-menu" type="text/x-handlebars-template">
+    <div class="wrap">
+      <div class="menu__image left">
+        <div class="image">
+          <img src="images/menu/pizza-1.jpg" alt="pizza-1">
+          <div class="image_text">
+            <a href="#order">
+              <div class="text_holder">
+                <h2>Order online</h2>
+                <p style="left: -10%">Delicious food delivered to your door</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="menu__image right">
+        <div class="image">
+          <img src="images/menu/pizza-2.jpg" alt="pizza-2">
+          <div class="image_text">
+            <a href="#booking">
+              <div class="text_holder">
+                <h2>Book a table</h2>
+                <p>Nulla hendrerit purus a neque. </p>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+      <div class="menu__text">
+        <div class="open">
+          <h2>OPENING HOURS:</h2>
+          <h3>TUE-SUN,12PM - 12AM</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="slideshow-container">
+      <div class="mySlides">
+        <div class="slideshow-image">
+          <div class="image">
+            <img src="images/menu/pizza-3.jpg" alt="pizza-3">
+          </div>
+        </div>
+        <div>
+          <div class="text fade">
+            <h4>Ut efficitur dui id lectus.</h4>
+            <p>
+              Duis porta id nibh non convallis.
+              Pellentesque consectetur sed neque commodo porttitor.
+              Integer vel fermentum arcu.<br> - <i>Nathan Miles</i>
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="text fade">
+            <h4>Maecenas quis rhoncus metus. Duis.</h4>
+            <p>
+              Nullam tristique lacus ipsum,
+              nec elementum nisl fermentum a.
+              Sed bibendum tellus eu leo ultrices.<br> - <i>Sarah Poison</i>
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="text fade">
+            <h4>Proin eget orci nulla. Fusce</h4>
+            <p>
+              Proin suscipit, lectus eu volutpat consectetur,
+              justo dolor interdum diam, at malesuada nisl ex non.<br> - <i>Arthur Morgan</i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <section class="gallery">
+      <div id="row">
+        <div class="gallery-image">
+          <img src="images/menu/pizza-4.jpg" alt="pizza-4">
+          <div class="holder">
+            <div class="button">
+            <i class="fas fa-heart"></i>
+            </div>
+            <div class="button_two">
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+          <div>
+          </div>
+        </div>
+        <div class="gallery-image">
+          <img src="images/menu/pizza-5.jpg" alt="pizza-5">
+          <div class="holder">
+            <div class="button">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="button_two">
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-image">
+          <img src="images/menu/pizza-6.jpg" alt="pizza-6">
+          <div class="holder">
+            <div class="button">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="button_two">
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="row">
+        <div class="gallery-image">
+          <img src="images/menu/pizza-7.jpg" alt="pizza-7">
+          <div class="holder">
+            <div class="button">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="button_two">
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-image">
+          <img src="images/menu/pizza-8.jpg" alt="pizza-8">
+          <div class="holder">
+            <div class="button">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="button_two">
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-image">
+          <img src="images/menu/pizza-9.jpg" alt="pizza-9">
+          <div class="holder">
+            <div class="button">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="button_two">
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </script>
 
   <script id="template-booking-widget" type="text/x-handlebars-template">
     <div class="booking-widget">

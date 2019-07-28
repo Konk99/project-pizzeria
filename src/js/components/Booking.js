@@ -210,7 +210,21 @@ export class Booking {
       body: JSON.stringify(payload), 
     };
 
-    fetch(url, options)
+    console.log(thisBooking.booked[thisBooking.date] && thisBooking.booked[thisBooking.date][thisBooking.hour] && thisBooking.booked[thisBooking.date][thisBooking.hour].indexOf(parseInt(thisBooking.tableId)) == -1);
+
+    if (!thisBooking.booked[thisBooking.date] || (thisBooking.booked[thisBooking.date] && !thisBooking.booked[thisBooking.date][thisBooking.hour])
+      || (thisBooking.booked[thisBooking.date] && thisBooking.booked[thisBooking.date][thisBooking.hour] && thisBooking.booked[thisBooking.date][thisBooking.hour].indexOf(parseInt(thisBooking.tableId)) == -1)) {
+      console.log('przeszło');
+      fetch(url, options)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (parsedresponse) {
+          console.log(parsedresponse);
+        })
+    }
+
+   /* fetch(url, options)
       .then(function (response) {
         return response.json();
       /*  if (response.thisBooking.booked[thisBooking.date] == payload.date && response.thisBooking.booked[thisBooking.date][thisBooking.hour] == payload.hour && response.thisBooking.booked[thisBooking.date][thisBooking.hour].includes(parseInt(thisBooking.tableId)) == null) {
@@ -218,10 +232,10 @@ export class Booking {
         } else {
           return response.json();
         }*/
-      })
+     /* })
       .then(function (parseResponse) {
         console.log(parseResponse);
-      })
+      })*/
      /* .catch(function(error){
         console.log('Ups zajęte');
         thisBooking.unbooked();

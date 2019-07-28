@@ -2,6 +2,7 @@ import { Product } from './components/Product.js';
 import { Cart } from './components/Cart.js';
 import { select, settings, templates, classNames } from './settings.js';
 import { Booking } from './components/Booking.js';
+import { Menu } from './components/Menu.js';
 
 const app = {
   initMenu: function () {
@@ -95,6 +96,41 @@ const app = {
     const booking = new Booking(thisApp.bookingWrapper);
   },
 
+  initMainMenu() {
+    const thisApp = this;
+
+    thisApp.menu = document.querySelector(select.containerOf.mainMenu);
+
+    const menu = new Menu(thisApp.menu);
+    thisApp.slideshow();
+
+  },
+
+  slideshow() {
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i = 0;
+      const slides = document.getElementsByClassName("text");
+      const dots = document.getElementsByClassName("dot");
+
+      for (i; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 2000);
+    } 
+  },
+
   init: function(){
     const thisApp = this;
     console.log('*** App starting ***');
@@ -106,6 +142,8 @@ const app = {
     thisApp.initPages();
 
     thisApp.initData();
+
+    thisApp.initMainMenu();
 
     thisApp.initCart();
 

@@ -1,0 +1,68 @@
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin-top: 90px;
+  margin-bottom: 20px;
+}
+
+.mySlides {
+  display: flex;
+}
+
+.text {
+  color: black;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  flex: 0 0 70%;
+  margin-left: 40px;
+  height: 100%;
+  display: none;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.slideshow-image {
+  height: 100%;
+  flex: 0 0 35%;
+  position: relative;
+  height: 200px;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
