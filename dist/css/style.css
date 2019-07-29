@@ -310,7 +310,7 @@ input.error, select.error {
 }
 
 .main-nav a.active {
-  background: #f2f2f2;
+  background: white;
 }
 
 .cart {
@@ -976,7 +976,7 @@ input.error, select.error {
   transition: background-color 0.6s ease;
 }
 
-.active {
+.dot.active {
   background-color: #717171;
 }
 

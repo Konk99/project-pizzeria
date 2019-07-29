@@ -27,7 +27,7 @@ export class BaseWidget {
   }
 
   parseValue(newValue) {
-    return parseInt(newValue);
+    return parseFloat(newValue);
   }
 
   isValid(newValue) {
