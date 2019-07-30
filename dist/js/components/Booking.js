@@ -37,6 +37,9 @@ export class Booking {
     thisBooking.hoursAmount = new AmountWidget(thisBooking.dom.hoursAmount);
     thisBooking.datePicker = new DatePicker(thisBooking.dom.datePicker);
     thisBooking.hourPicker = new HourPicker(thisBooking.dom.hourPicker);
+
+    thisBooking.firstHour = [];
+    console.log('times', thisBooking.firstHour);
     console.log('people', thisBooking.peopleAmount);
 
     thisBooking.dom.wrapper.addEventListener('updated', function () {
@@ -133,6 +136,11 @@ export class Booking {
     if (!thisBooking.booked[date][hour]) {
       thisBooking.booked[date][hour] = [];
     }
+    //console.log(date, hour);
+    thisBooking.firstHour.push(date + ':' + hour);
+  //  thisBooking.firstHour.push(hour);
+  //  console.log('początek', thisBooking.firstHour);
+
 
     thisBooking.booked[date][hour].push(table);
 
@@ -144,6 +152,10 @@ export class Booking {
 
     thisBooking.booked[date][hour].push(table);
     }
+
+    
+
+ 
   }
 
   updateDOM() {
@@ -167,7 +179,20 @@ export class Booking {
         thisBooking.tableId = table.getAttribute(settings.booking.tableIdAttribute);
       })
     }
+
+    for (let razy of thisBooking.firstHour) {
+
+      let czasik = razy.split(':');
+
+      if (thisBooking.date == czasik[0]) {
+        console.log('works?');
+      }
+   // console.log('działa?', czasik);
+    }
   }
+
+
+
 
 /*  tablePick() {
     const thisBooking = this;
@@ -212,6 +237,14 @@ export class Booking {
 
     console.log(thisBooking.booked[thisBooking.date] && thisBooking.booked[thisBooking.date][thisBooking.hour] && thisBooking.booked[thisBooking.date][thisBooking.hour].indexOf(parseInt(thisBooking.tableId)) == -1);
 
+    console.log('data',thisBooking.date);
+
+
+
+
+
+
+   // if(thisBooking.booked[thisBooking.date[0]] )
     if (!thisBooking.booked[thisBooking.date] || (thisBooking.booked[thisBooking.date] && !thisBooking.booked[thisBooking.date][thisBooking.hour])
       || (thisBooking.booked[thisBooking.date] && thisBooking.booked[thisBooking.date][thisBooking.hour] && thisBooking.booked[thisBooking.date][thisBooking.hour].indexOf(parseInt(thisBooking.tableId)) == -1)) {
       console.log('przeszło');

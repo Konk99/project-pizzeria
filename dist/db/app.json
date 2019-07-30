@@ -206,7 +206,7 @@
   "event": [
     {
       "id": 1,
-      "date": "2019-07-28",
+      "date": "2019-08-08",
       "hour": "12:30",
       "table": 1,
       "repeat": false,
@@ -265,13 +265,94 @@
   ],
   "booking": [
     {
-      "hour": "13:00",
+      "hour": "NaN:NaN",
+      "date": "2019-07-30",
+      "people": 1,
+      "duration": 1,
+      "table": null,
+      "repeat": false,
+      "id": 1
+    },
+    {
+      "hour": "NaN:NaN",
       "date": "2019-07-31",
       "people": 1,
       "duration": 1,
+      "table": null,
+      "repeat": false,
+      "id": 2
+    },
+    {
+      "hour": "15:00",
+      "date": "2019-07-31",
+      "people": 1,
+      "duration": 5,
       "table": 1,
       "repeat": false,
-      "id": 1
+      "id": 3
+    },
+    {
+      "hour": "NaN:NaN",
+      "date": "2019-07-31",
+      "people": 1,
+      "duration": 1,
+      "table": null,
+      "repeat": false,
+      "id": 4
+    },
+    {
+      "hour": "NaN:NaN",
+      "date": "2019-07-31",
+      "people": 1,
+      "duration": 1,
+      "table": null,
+      "repeat": false,
+      "id": 5
+    },
+    {
+      "hour": "NaN:NaN",
+      "date": "2019-07-31",
+      "people": 1,
+      "duration": 1,
+      "table": null,
+      "repeat": false,
+      "id": 6
+    },
+    {
+      "hour": "NaN:NaN",
+      "date": "2019-07-31",
+      "people": 1,
+      "duration": 1,
+      "table": null,
+      "repeat": false,
+      "id": 7
+    },
+    {
+      "hour": "NaN:NaN",
+      "date": "2019-07-31",
+      "people": 1,
+      "duration": 1,
+      "table": null,
+      "repeat": false,
+      "id": 8
+    },
+    {
+      "hour": "NaN:NaN",
+      "date": "2019-07-31",
+      "people": 1,
+      "duration": 1,
+      "table": null,
+      "repeat": false,
+      "id": 9
+    },
+    {
+      "hour": "NaN:NaN",
+      "date": "2019-07-31",
+      "people": 1,
+      "duration": 1,
+      "table": null,
+      "repeat": false,
+      "id": 10
     }
   ]
 }

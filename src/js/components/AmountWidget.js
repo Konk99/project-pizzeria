@@ -17,7 +17,6 @@ export class AmountWidget extends BaseWidget {
     thisWidget.dom.input = thisWidget.dom.wrapper.querySelector(select.widgets.amount.input);
     thisWidget.dom.linkDecrease = thisWidget.dom.wrapper.querySelector(select.widgets.amount.linkDecrease);
     thisWidget.dom.linkIncrease = thisWidget.dom.wrapper.querySelector(select.widgets.amount.linkIncrease);
-    thisWidget.dom.hour = thisWidget.dom.wrapper.querySelector('input[name="hours"]');
   }
 
   setValue(value) {
@@ -42,21 +41,31 @@ export class AmountWidget extends BaseWidget {
 
     thisWidget.dom.linkDecrease.addEventListener('click', function (event) {
       event.preventDefault();
-      if (!thisWidget.dom.hour) {
+
+      if (thisWidget.dom.linkDecrease.id == 'amount' || thisWidget.dom.linkIncrease.id == 'people') {
         thisWidget.value--;
       } else {
-        thisWidget.value = parseFloat(thisWidget.value) - .5;
+      thisWidget.value = parseFloat(thisWidget.value) - .5;
+
+        thisWidget.dom.time = thisWidget.dom.linkDecrease.querySelector('.hour-picker .output').innerHTML;
+      console.log('godzina', thisWidget.dom.time);
       }
 
     });
 
     thisWidget.dom.linkIncrease.addEventListener('click', function (event) {
       event.preventDefault();
-      if (!thisWidget.dom.hour) {
+      console.log('prawda', thisWidget.dom.linkIncrease.id);
+      if (thisWidget.dom.linkIncrease.id == 'amount' || thisWidget.dom.linkIncrease.id == 'people') {
         thisWidget.value++;
       } else {
-        thisWidget.value = parseFloat(thisWidget.value) + .5;
+      thisWidget.value = parseFloat(thisWidget.value) + .5;
+
+        thisWidget.dom.time = thisWidget.dom.linkIncrease.querySelector('.hour-picker .output').innerHTML;
+      console.log('godzina', thisWidget.dom.time);
       }
+
+
       console.log(thisWidget.value);
     });
 

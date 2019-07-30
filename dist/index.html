@@ -260,9 +260,9 @@
             People
             <div class="widget-amount people-amount">
               <!-- widget-amount -->
-              <a class="btn-quantity" href="#less"><i class="fas fa-minus"></i></a>
+              <a class="btn-quantity" href="#less" id="people"><i class="fas fa-minus"></i></a>
               <input class="amount" type="text" name="people" value="1">
-              <a class="btn-quantity" href="#more"><i class="fas fa-plus"></i></a>
+              <a class="btn-quantity" href="#more" id="people"><i class="fas fa-plus"></i></a>
             </div>
           </label>
           <label class="booking-option-title">
@@ -270,9 +270,9 @@
             Hours
             <div class="widget-amount hours-amount">
               <!-- widget-amount -->
-              <a class="btn-quantity" href="#less"><i class="fas fa-minus"></i></a>
-              <input class="amount" step="0.5" type="text" name="hours" value="1">
-              <a class="btn-quantity" href="#more"><i class="fas fa-plus"></i></a>
+              <a class="btn-quantity" href="#less" id="hours"><i class="fas fa-minus"></i></a>
+              <input class="amount" type="text" name="hours" value="1">
+              <a class="btn-quantity" href="#more" id="hours"><i class="fas fa-plus"></i></a>
             </div>
           </label>
           <div>
@@ -309,9 +309,9 @@
     <li>
       <div class="widget-amount">
         <!-- widget-amount -->
-        <a class="btn-quantity btn-quantity--lt" href="#less"><i class="fas fa-minus"></i></a>
+        <a class="btn-quantity btn-quantity--lt" href="#less" id="amount"><i class="fas fa-minus"></i></a>
         <input class="amount" type="text" value="{{ amount }}">
-        <a class="btn-quantity btn-quantity--lt" href="#more"><i class="fas fa-plus"></i></a>
+        <a class="btn-quantity btn-quantity--lt" href="#more" id="amount"><i class="fas fa-plus"></i></a>
       </div>
       <div class="cart__product">
         <div class="cart__product-header">
@@ -402,9 +402,9 @@
             <div class="widget-amount">
               <!-- widget-amount -->
               <h3 class="product__params-title">Select quantity</h3>
-              <a class="btn-quantity" href="#less"><i class="fas fa-minus"></i></a>
+              <a class="btn-quantity" href="#less" id="amount"><i class="fas fa-minus"></i></a>
               <input class="amount" type="text" value="1">
-              <a class="btn-quantity" href="#more"><i class="fas fa-plus"></i></a>
+              <a class="btn-quantity" href="#more" id="amount"><i class="fas fa-plus"></i></a>
             </div>
             <p class="product__total-price">
               Total: $<span class="price">{{{ price }}}</span>
