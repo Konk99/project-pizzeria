@@ -265,8 +265,8 @@
   ],
   "booking": [
     {
-      "hour": "NaN:NaN",
-      "date": "2019-07-30",
+      "hour": "12:30",
+      "date": "2019-08-01",
       "people": 1,
       "duration": 1,
       "table": null,
@@ -274,44 +274,44 @@
       "id": 1
     },
     {
-      "hour": "NaN:NaN",
-      "date": "2019-07-31",
+      "hour": "12:00",
+      "date": "2019-08-08",
       "people": 1,
       "duration": 1,
-      "table": null,
+      "table": 1,
       "repeat": false,
       "id": 2
     },
     {
-      "hour": "15:00",
-      "date": "2019-07-31",
+      "hour": "20:00",
+      "date": "2019-08-01",
       "people": 1,
-      "duration": 5,
+      "duration": 1,
       "table": 1,
       "repeat": false,
       "id": 3
     },
     {
-      "hour": "NaN:NaN",
-      "date": "2019-07-31",
+      "hour": "19:00",
+      "date": "2019-08-02",
       "people": 1,
-      "duration": 1,
-      "table": null,
+      "duration": 3,
+      "table": 1,
       "repeat": false,
       "id": 4
     },
     {
-      "hour": "NaN:NaN",
-      "date": "2019-07-31",
+      "hour": "18:30",
+      "date": "2019-08-02",
       "people": 1,
-      "duration": 1,
+      "duration": 1.5,
       "table": null,
       "repeat": false,
       "id": 5
     },
     {
-      "hour": "NaN:NaN",
-      "date": "2019-07-31",
+      "hour": "18:00",
+      "date": "2019-08-02",
       "people": 1,
       "duration": 1,
       "table": null,
@@ -319,40 +319,13 @@
       "id": 6
     },
     {
-      "hour": "NaN:NaN",
-      "date": "2019-07-31",
+      "hour": "17:00",
+      "date": "2019-08-02",
       "people": 1,
-      "duration": 1,
-      "table": null,
+      "duration": 2,
+      "table": 1,
       "repeat": false,
       "id": 7
-    },
-    {
-      "hour": "NaN:NaN",
-      "date": "2019-07-31",
-      "people": 1,
-      "duration": 1,
-      "table": null,
-      "repeat": false,
-      "id": 8
-    },
-    {
-      "hour": "NaN:NaN",
-      "date": "2019-07-31",
-      "people": 1,
-      "duration": 1,
-      "table": null,
-      "repeat": false,
-      "id": 9
-    },
-    {
-      "hour": "NaN:NaN",
-      "date": "2019-07-31",
-      "people": 1,
-      "duration": 1,
-      "table": null,
-      "repeat": false,
-      "id": 10
     }
   ]
 }

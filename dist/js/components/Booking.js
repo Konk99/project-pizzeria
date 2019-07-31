@@ -4,6 +4,8 @@ import { AmountWidget } from './AmountWidget.js';
 import { DatePicker } from './DatePicker.js';
 import { HourPicker } from './HourPicker.js';
 
+export var divide;
+
 export class Booking {
   constructor(booking) {
     const thisBooking = this;
@@ -28,6 +30,7 @@ export class Booking {
     thisBooking.dom.hourPicker = thisBooking.dom.wrapper.querySelector(select.widgets.hourPicker.wrapper);
     thisBooking.dom.tables = thisBooking.dom.wrapper.querySelectorAll(select.booking.tables);
     thisBooking.dom.form = thisBooking.dom.wrapper.querySelector('.booking-form');
+    thisBooking.dom.increase = thisBooking.dom.wrapper.querySelector('a[href="#more"][id="hours"]');
   }
 
   initWidget() {
@@ -177,18 +180,23 @@ export class Booking {
       table.addEventListener('click', function () {
         table.classList.add(classNames.booking.tableBooked);
         thisBooking.tableId = table.getAttribute(settings.booking.tableIdAttribute);
+        for (let razy of thisBooking.firstHour) {
+
+          let czasik = razy.split(':');
+
+          if (thisBooking.date == czasik[0]) {
+          console.log('działa?', czasik[1]);
+            divide = czasik[1] - thisBooking.hour;
+          //  const event = new Event('reserved');
+           // thisBooking.hoursAmount.dispatchEvent(event);
+            thisBooking.hoursAmount.value = divide;
+          console.log('może?',divide);
+          } 
+        }
+        thisBooking.dom.increase.classList.add('checked');
       })
     }
 
-    for (let razy of thisBooking.firstHour) {
-
-      let czasik = razy.split(':');
-
-      if (thisBooking.date == czasik[0]) {
-        console.log('works?');
-      }
-   // console.log('działa?', czasik);
-    }
   }
 
 
@@ -237,14 +245,11 @@ export class Booking {
 
     console.log(thisBooking.booked[thisBooking.date] && thisBooking.booked[thisBooking.date][thisBooking.hour] && thisBooking.booked[thisBooking.date][thisBooking.hour].indexOf(parseInt(thisBooking.tableId)) == -1);
 
-    console.log('data',thisBooking.date);
+    console.log('data',thisBooking.hour);
 
 
 
 
-
-
-   // if(thisBooking.booked[thisBooking.date[0]] )
     if (!thisBooking.booked[thisBooking.date] || (thisBooking.booked[thisBooking.date] && !thisBooking.booked[thisBooking.date][thisBooking.hour])
       || (thisBooking.booked[thisBooking.date] && thisBooking.booked[thisBooking.date][thisBooking.hour] && thisBooking.booked[thisBooking.date][thisBooking.hour].indexOf(parseInt(thisBooking.tableId)) == -1)) {
       console.log('przeszło');
@@ -285,7 +290,8 @@ export class Booking {
   initActions() {
     const thisBooking = this;
 
-    thisBooking.dom.form.addEventListener('submit', function () {
+
+    thisBooking.dom.form.addEventListener('submit', function (event) {
       event.preventDefault();
       thisBooking.senderBooking();
       thisBooking.parseData();
@@ -295,8 +301,5 @@ export class Booking {
   unbooked() {
     const thisBooking = this;
 
-    for (let table of thisBooking.dom.tables) {
-      table.classList.remove(classNames.booking.tableBooked);
-    }
   }
 }

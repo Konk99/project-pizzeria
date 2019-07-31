@@ -1,5 +1,6 @@
 import { select, settings } from '../settings.js';
 import { BaseWidget } from './BaseWidget.js';
+import { divide } from './Booking.js';
 
 export class AmountWidget extends BaseWidget {
   constructor(wrapper) {
@@ -17,6 +18,7 @@ export class AmountWidget extends BaseWidget {
     thisWidget.dom.input = thisWidget.dom.wrapper.querySelector(select.widgets.amount.input);
     thisWidget.dom.linkDecrease = thisWidget.dom.wrapper.querySelector(select.widgets.amount.linkDecrease);
     thisWidget.dom.linkIncrease = thisWidget.dom.wrapper.querySelector(select.widgets.amount.linkIncrease);
+    thisWidget.max = settings.amountWidget.defaultMax;
   }
 
   setValue(value) {
@@ -24,7 +26,11 @@ export class AmountWidget extends BaseWidget {
 
     const newValue = parseInt(value);
 
-    if ((newValue != thisWidget.value) && (newValue >= settings.amountWidget.defaultMin) && (newValue <= settings.amountWidget.defaultMax)) {
+   // thisWidget.max = settings.amountWidget.defaultMax;
+    //thisWidget.dom.input.addEventListener('reserved', function () {
+   // })
+
+    if ((newValue != thisWidget.value) && (newValue >= settings.amountWidget.defaultMin) && (newValue <= divide)) {
       thisWidget.value = newValue;
       this.announce();
     }
@@ -47,8 +53,6 @@ export class AmountWidget extends BaseWidget {
       } else {
       thisWidget.value = parseFloat(thisWidget.value) - .5;
 
-        thisWidget.dom.time = thisWidget.dom.linkDecrease.querySelector('.hour-picker .output').innerHTML;
-      console.log('godzina', thisWidget.dom.time);
       }
 
     });
@@ -59,13 +63,16 @@ export class AmountWidget extends BaseWidget {
       if (thisWidget.dom.linkIncrease.id == 'amount' || thisWidget.dom.linkIncrease.id == 'people') {
         thisWidget.value++;
       } else {
-      thisWidget.value = parseFloat(thisWidget.value) + .5;
+        if (thisWidget.dom.linkIncrease.classList.contains('checked')) {
+          thisWidget.value = parseFloat(thisWidget.value) + 0;
+        } else {
+          thisWidget.value = parseFloat(thisWidget.value) + .5;
+        }
 
-        thisWidget.dom.time = thisWidget.dom.linkIncrease.querySelector('.hour-picker .output').innerHTML;
-      console.log('godzina', thisWidget.dom.time);
+
       }
-
-
+      thisWidget.getElements();
+      console.log('true?', thisWidget.dom.linkIncrease.classList.contains('checked'));
       console.log(thisWidget.value);
     });
 
