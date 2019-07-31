@@ -42,8 +42,6 @@ export class Booking {
     thisBooking.hourPicker = new HourPicker(thisBooking.dom.hourPicker);
 
     thisBooking.firstHour = [];
-    console.log('times', thisBooking.firstHour);
-    console.log('people', thisBooking.peopleAmount);
 
     thisBooking.dom.wrapper.addEventListener('updated', function () {
       thisBooking.updateDOM();
@@ -97,8 +95,6 @@ export class Booking {
       .then(function ([bookings, eventsCurrent, eventsRepeat]) {
         thisBooking.parseData(bookings, eventsCurrent, eventsRepeat);
       });
-
-   // thisBooking.tablePick();
   }
 
   parseData(bookings, eventsCurrent, eventsRepeat) {
@@ -180,17 +176,15 @@ export class Booking {
       table.addEventListener('click', function () {
         table.classList.add(classNames.booking.tableBooked);
         thisBooking.tableId = table.getAttribute(settings.booking.tableIdAttribute);
-        for (let razy of thisBooking.firstHour) {
+        for (let elem of thisBooking.firstHour) {
 
-          let czasik = razy.split(':');
+          let time = elem.split(':');
 
-          if (thisBooking.date == czasik[0]) {
-          console.log('działa?', czasik[1]);
-            divide = czasik[1] - thisBooking.hour;
+          if (thisBooking.date == time[0]) {
+            divide = time[1] - thisBooking.hour;
           //  const event = new Event('reserved');
            // thisBooking.hoursAmount.dispatchEvent(event);
             thisBooking.hoursAmount.value = divide;
-          console.log('może?',divide);
           } 
         }
         thisBooking.dom.increase.classList.add('checked');
@@ -243,16 +237,15 @@ export class Booking {
       body: JSON.stringify(payload), 
     };
 
-    console.log(thisBooking.booked[thisBooking.date] && thisBooking.booked[thisBooking.date][thisBooking.hour] && thisBooking.booked[thisBooking.date][thisBooking.hour].indexOf(parseInt(thisBooking.tableId)) == -1);
+   // console.log(thisBooking.booked[thisBooking.date] && thisBooking.booked[thisBooking.date][thisBooking.hour] && thisBooking.booked[thisBooking.date][thisBooking.hour].indexOf(parseInt(thisBooking.tableId)) == -1);
 
-    console.log('data',thisBooking.hour);
+   // console.log('data',thisBooking.hour);
 
 
 
 
     if (!thisBooking.booked[thisBooking.date] || (thisBooking.booked[thisBooking.date] && !thisBooking.booked[thisBooking.date][thisBooking.hour])
       || (thisBooking.booked[thisBooking.date] && thisBooking.booked[thisBooking.date][thisBooking.hour] && thisBooking.booked[thisBooking.date][thisBooking.hour].indexOf(parseInt(thisBooking.tableId)) == -1)) {
-      console.log('przeszło');
       fetch(url, options)
         .then(function (response) {
           return response.json();
@@ -296,10 +289,5 @@ export class Booking {
       thisBooking.senderBooking();
       thisBooking.parseData();
     });
-  }
-
-  unbooked() {
-    const thisBooking = this;
-
   }
 }

@@ -26,10 +26,6 @@ export class AmountWidget extends BaseWidget {
 
     const newValue = parseInt(value);
 
-   // thisWidget.max = settings.amountWidget.defaultMax;
-    //thisWidget.dom.input.addEventListener('reserved', function () {
-   // })
-
     if ((newValue != thisWidget.value) && (newValue >= settings.amountWidget.defaultMin) && (newValue <= divide)) {
       thisWidget.value = newValue;
       this.announce();
@@ -59,7 +55,6 @@ export class AmountWidget extends BaseWidget {
 
     thisWidget.dom.linkIncrease.addEventListener('click', function (event) {
       event.preventDefault();
-      console.log('prawda', thisWidget.dom.linkIncrease.id);
       if (thisWidget.dom.linkIncrease.id == 'amount' || thisWidget.dom.linkIncrease.id == 'people') {
         thisWidget.value++;
       } else {
@@ -72,8 +67,6 @@ export class AmountWidget extends BaseWidget {
 
       }
       thisWidget.getElements();
-      console.log('true?', thisWidget.dom.linkIncrease.classList.contains('checked'));
-      console.log(thisWidget.value);
     });
 
   }
