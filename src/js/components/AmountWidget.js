@@ -58,7 +58,7 @@ export class AmountWidget extends BaseWidget {
       if (thisWidget.dom.linkIncrease.id == 'amount' || thisWidget.dom.linkIncrease.id == 'people') {
         thisWidget.value++;
       } else {
-        if (thisWidget.dom.linkIncrease.classList.contains('checked')) {
+        if (thisWidget.dom.linkIncrease.classList.contains('checked') && thisWidget.value == divide) {
           thisWidget.value = parseFloat(thisWidget.value) + 0;
         } else {
           thisWidget.value = parseFloat(thisWidget.value) + .5;
