@@ -74,8 +74,6 @@ export class CartProduct {
   getData() {
     const thisCartProduct = this;
 
-    const product = thisCartProduct;
-
-    return product;
+    return thisCartProduct;
   }
 }
