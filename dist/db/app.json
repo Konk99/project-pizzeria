@@ -265,8 +265,8 @@
   ],
   "booking": [
     {
-      "hour": "19:00",
-      "date": "2019-08-03",
+      "hour": "20:00",
+      "date": "2019-08-04",
       "people": 1,
       "duration": 1,
       "table": 1,

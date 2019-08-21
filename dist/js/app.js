@@ -50,6 +50,7 @@ const app = {
 
     thisApp.pages = Array.from(document.querySelector(select.containerOf.pages).children);
     thisApp.navLinks = Array.from(document.querySelectorAll(select.nav.links));
+    console.log('linki',thisApp.navLinks);
     let pagesMatchingHash = [];
 
     for (let link of thisApp.navLinks) {
@@ -102,6 +103,15 @@ const app = {
     thisApp.menu = document.querySelector(select.containerOf.mainMenu);
 
     const menu = new Menu(thisApp.menu);
+    console.log('menu', menu, menu.dom.wrapper.querySelectorAll('a'));
+    const links = Array.from(menu.dom.wrapper.querySelectorAll('a'));
+
+    for (let link of links) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        thisApp.activePage(link.getAttribute('href').replace('#', ''));
+      })
+    }
     thisApp.slideshow();
 
   },

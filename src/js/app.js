@@ -102,6 +102,14 @@ const app = {
     thisApp.menu = document.querySelector(select.containerOf.mainMenu);
 
     const menu = new Menu(thisApp.menu);
+    const links = Array.from(menu.dom.wrapper.querySelectorAll('a'));
+
+    for (let link of links) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        thisApp.activePage(link.getAttribute('href').replace('#', ''));
+      })
+    }
     thisApp.slideshow();
 
   },
@@ -133,11 +141,6 @@ const app = {
 
   init: function(){
     const thisApp = this;
-    console.log('*** App starting ***');
-    console.log('thisApp:', thisApp);
-    console.log('classNames:', classNames);
-    console.log('settings:', settings);
-    console.log('templates:', templates);
 
     thisApp.initPages();
 

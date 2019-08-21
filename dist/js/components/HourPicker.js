@@ -1,6 +1,7 @@
 import { BaseWidget } from './BaseWidget.js';
 import { settings,select } from '../settings.js';
 import { utils } from '../utils.js';
+//import { divide } from './Booking.js';
 
 export class HourPicker extends BaseWidget {
   constructor(wrapper) {
@@ -21,6 +22,7 @@ export class HourPicker extends BaseWidget {
 
     thisWidget.dom.input.addEventListener('input', function () {
       thisWidget.value = thisWidget.dom.input.value;
+      divide = null;
     });
   }
 

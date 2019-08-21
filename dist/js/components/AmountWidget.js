@@ -1,6 +1,6 @@
 import { select, settings } from '../settings.js';
 import { BaseWidget } from './BaseWidget.js';
-import { divide } from './Booking.js';
+//import { divide } from './Booking.js';
 
 export class AmountWidget extends BaseWidget {
   constructor(wrapper) {
