@@ -207,7 +207,8 @@ export class Booking {
         .then(function (response) {
           return response.json();
         })
-        .then(function (parsedresponse) {
+        .catch(function (error) {
+          console.log("Error occured");
         })
     }
 
